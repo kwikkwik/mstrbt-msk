@@ -1,0 +1,22 @@
+{
+  "name": "Master Bot",
+  "version": "0.2.1",
+  "main": "index.js",
+  "description": "Bla Bla Land",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "simple-youtube-api": "^5.0.2",
+    "discord.js": "^11.3.2",
+    "opusscript": "^0.0.6",
+    "superagent": "^3.8.3",
+    "ytdl-core": "^0.20.2",
+    "ffmpeg-binaries": "3.2.2-3",
+    "fs": "^0.0.2"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "license": "MIT"
+}
