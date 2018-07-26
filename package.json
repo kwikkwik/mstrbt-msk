@@ -7,8 +7,9 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "simple-youtube-api": "^5.0.2",
+    "express": "^4.16.3",
     "discord.js": "^11.3.2",
+    "simple-youtube-api": "^5.0.2",
     "opusscript": "^0.0.6",
     "superagent": "^3.8.3",
     "ytdl-core": "^0.20.2",
