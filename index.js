@@ -166,7 +166,7 @@ ${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`
           color: 0x06238B,
           description: `⏭ Current Playing Song Has Been **Skipped**.`,
         }});
-    } else if (command === 'stop') {
+    } else if (command === 'stop'|| command === 'st') {
        let member = msg.member;
         if (!msg.member.voiceChannel) return msg.channel.send({
             embed: {
@@ -186,7 +186,7 @@ ${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`
           color: 0x06238B,
           description: `⏹ Current Playing Song Has Been **Stopped**, All Song Queues Has Been **Cleared**!.`,
         }});
-      } else if (command === 'volume') {
+      } else if (command === 'volume' || command === 'v') {
           if (!msg.member.voiceChannel) return msg.channel.send({
             embed: {
                 color: 0x06238B,
@@ -255,7 +255,7 @@ ${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`
 ${serverQueue.songs.map(song => `**•** ${song.title}`).join('\n')}`
             }
         });
-    } else if (command === 'pause') {
+    } else if (command === 'pause'|| command === 'pa') {
         if (serverQueue && serverQueue.playing) {
             serverQueue.playing = false;
             serverQueue.connection.dispatcher.pause();
@@ -272,7 +272,7 @@ ${serverQueue.songs.map(song => `**•** ${song.title}`).join('\n')}`
                 description: `You're Not In The **Voice Channel**, Go Join Some.`
             }
         })
-    } else if (command === 'resume') {
+    } else if (command === 'resume'|| command === 'res') {
         if (serverQueue && !serverQueue.playing) {
             serverQueue.playing = true;
             serverQueue.connection.dispatcher.resume();
@@ -294,7 +294,7 @@ ${serverQueue.songs.map(song => `**•** ${song.title}`).join('\n')}`
     return undefined;
 });
  
-async function handleVideo(video, msg, voiceChannel, playlist = false) {
+async function handleVideo(video, msg, voiceChannel, playlist = true) {
     const serverQueue = queue.get(msg.guild.id);
     console.log(video);
   const song = {
