@@ -294,7 +294,7 @@ ${serverQueue.songs.map(song => `**•** ${song.title}`).join('\n')}`
     return undefined;
 });
  
-async function handleVideo(video, msg, voiceChannel, playlist = true) {
+async function handleVideo(video, msg, voiceChannel, playlist = false) {
     const serverQueue = queue.get(msg.guild.id);
     console.log(video);
   const song = {
@@ -395,5 +395,15 @@ function play(guild, song) {
  
     serverQueue.textChannel.send(startembed);
 };
+
+    try {
+        let commandFile = require(`./commands/${cmd}.js`);
+        commandFile.run(client, message, args);
+    } catch(e) {
+        console.log(e.message);
+    } finally {
+        console.log(`${message.author.username} ran the command: ${cmd}`);
+    }
+});
  
 bot.login(process.env.TOKEN);
