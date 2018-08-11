@@ -1,6 +1,2 @@
+aaaaaaaaaaaaaaaaaaaaaa
 ----------------------
-|aaaaaaaaaaa|aaaaaaaaaa|
-|
-|
-|
-|
